@@ -1,0 +1,26 @@
+# System-wide .profile for sh(1)
+
+if [ -x /usr/libexec/path_helper ]; then
+	eval `/usr/libexec/path_helper -s`
+fi
+
+if [ "${BASH-no}" != "no" ]; then
+	[ -r /etc/bashrc ] && . /etc/bashrc
+fi
+
+# Basic
+# TODO: FILLED PATH FOR EACH ALIAS.
+alias ll='ls -l'
+alias la='ls -a'
+alias l='ls -l'
+alias free='py ./free.py'
+alias srczsh='source ./zshrc'
+alias src='sudo vi /etc/profile && srczsh'
+alias py='python3'
+alias nats='./go/bin/gnatsd'
+alias natsd='nohup ./go/bin/gnatsd >> /data/log/nats.log &'
+alias c='clear'
+
+# Others
+alias xw='cd /data/seuxw'
+alias tau='cd /data/tau'
